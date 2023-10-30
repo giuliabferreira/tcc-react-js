@@ -1,9 +1,10 @@
-import Inicio from './pages/client/painel';
+import React from 'react';
+import MainRoutes from './routes';
 
 function App() {
   return (
     <div className="App">
-      <Inicio/>
+      <MainRoutes />
     </div>
   );
 }
