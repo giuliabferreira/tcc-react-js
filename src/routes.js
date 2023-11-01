@@ -27,6 +27,10 @@ function MainRoutes() {
         <Route path="/" element={<Painel />}/>
 
         <Route path="/dashboard" element={<Dashboard />}/>
+
+        <Route path="/agenda" element={<Produtos />}/>
+
+        <Route path="/formulario" element={<Usuarios />}/>
       </Routes>
     </>
   );

@@ -7,20 +7,16 @@ import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-import Dashboard from "../../admin/dashboard";
+import { Link } from 'react-router-dom';
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="">
-        Focinho Feliz
-      </Link>{' '}
+      {'Copyright © Focinho Feliz'}
+      {' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -69,7 +65,7 @@ export default function Painel() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1, bgcolor: '#87CEEB' }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -85,6 +81,7 @@ export default function Painel() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                style={{ borderColor: '#87CEEB' }}
               />
               <TextField
                 margin="normal"
@@ -95,17 +92,18 @@ export default function Painel() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                style={{ borderColor: '#87CEEB' }}
               />
-              <Link to={"/dashboard"}>
-              <Button
+              <Link to="/dashboard" style={{ textDecoration: 'none' }}>
+                <Button
                 type="submit"
                 fullWidth
                 variant="contained"
-                background-color="#9c27b0"
+                style={{ backgroundColor: '#87CEEB', border: '2px solid #87CEEB' }} // Use 'style' em vez de 'sx' para estilizar o botão
                 sx={{ mt: 3, mb: 2 }}
-              >
+                >
                 Entrar
-              </Button>
+                </Button>
               </Link>
               
               <Copyright sx={{ mt: 5 }} />
