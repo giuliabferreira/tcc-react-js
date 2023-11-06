@@ -97,7 +97,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
         noWrap
         sx={{ flexGrow: 1 }}
       >
-        Bem-vindo!
+        Médico
       </Typography>
     </Toolbar>
   </AppBar>

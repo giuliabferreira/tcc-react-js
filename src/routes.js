@@ -31,6 +31,13 @@ function MainRoutes() {
         <Route path="/agenda" element={<Produtos />}/>
 
         <Route path="/formulario" element={<Usuarios />}/>
+
+      -
+
+        <Route path="usuarios/cadastrar" element={<UsuariosCadastrar />}/>
+
+        <Route path="usuarios/editar" element={<UsuariosEditar />}/>
+
       </Routes>
     </>
   );
