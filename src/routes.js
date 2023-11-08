@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from 'react-dom/client';
 
 import { Routes, Route } from "react-router-dom";
 
@@ -30,11 +29,9 @@ function MainRoutes() {
 
         <Route path="/agenda" element={<Produtos />}/>
 
-        <Route path="/formulario" element={<Usuarios />}/>
+        <Route path="/formulario" element={<UsuariosCadastrar />}/>
 
       -
-
-        <Route path="usuarios/cadastrar" element={<UsuariosCadastrar />}/>
 
         <Route path="usuarios/editar" element={<UsuariosEditar />}/>
 
