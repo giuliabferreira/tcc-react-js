@@ -14,8 +14,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { FormControl } from '@mui/material';
 import { Link } from 'react-router-dom';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
 
 import MenuAdmin from '../../../components/menu-admin';
 import Footer from '../../../components/footer-admin';
@@ -26,9 +24,7 @@ export default function UsuariosCadastrar() {
   const [cidade, setCidade] = useState('');
   const [especie, setEspecie] = useState('');
   const [sexo, setSexo] = useState('');
-
-  const [showAlert, setShowAlert] = useState(false); // Adicione este estado
-
+  const [castracao, setCastracao] = useState('');
 
   const handleCidadeChange = (event) => {
     setCidade(event.target.value);
@@ -42,9 +38,8 @@ export default function UsuariosCadastrar() {
     setSexo(event.target.value);
   };
 
-  const handleEnviarClick = () => {
-    // Quando o botão "Enviar" é clicado, exiba o alerta
-    setShowAlert(true);
+  const handleCastracaoChange = (event) => {
+    setCastracao(event.target.value);
   };
 
   return (
@@ -71,10 +66,10 @@ export default function UsuariosCadastrar() {
               <Grid item xs={12} sm={10}>
                 <Paper
                   sx={{
-                    p: 5,
+                    p: 8,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 900,
+                    height: 870,
                   }}
                 >
                   <h1 style={{ textAlign: 'center', color: '#87CEEB', marginBottom: '20px' }}>
@@ -82,22 +77,13 @@ export default function UsuariosCadastrar() {
                   </h1>
                   <h3 style={{ color: '#87CEEB', marginBottom: '10px' }}>DADOS DO RESPONSÁVEL</h3>
                   <Grid container spacing={3}>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} sm={12}>
                       <TextField
                         margin="normal"
                         fullWidth
                         id="nome"
                         label="Nome"
                         name="nome"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={8}>
-                      <TextField
-                        margin="normal"
-                        fullWidth
-                        id="sobrenome"
-                        label="Sobrenome"
-                        name="sobrenome"
                       />
                     </Grid>
                     <Grid item xs={12} sm={7}>
@@ -125,21 +111,18 @@ export default function UsuariosCadastrar() {
                         </Select>
                       </FormControl>
                     </Grid>
-                    <Grid item xs={12} sm={12}>
-                      <TextField fullWidth id="celular" label="Celular" name="celular" />
+                    <Grid item xs={12} sm={6}>
+                      <TextField fullWidth id="celular1" label="Número de Telefone Principal" name="celular1" />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <TextField fullWidth id="celular2" label="Número de Telefone Reserva" name="celular2" />
                     </Grid>
                   </Grid>
                   <h3 style={{ color: 'white' }}></h3>
-                  <h3 style={{ color: '#87CEEB', marginBottom: '10px' }}>DADOS DO ANIMAL</h3>
+                  <h3 style={{ color: '#87CEEB' }}>DADOS DO ANIMAL</h3>
                   <Grid container spacing={3}>
-                    <Grid item xs={12} sm={5}>
-                      <TextField
-                        margin="normal"
-                        fullWidth
-                        id="nomecachorro"
-                        label="Nome"
-                        name="nome"
-                      />
+                  <Grid item xs={12} sm={5}>
+                      <TextField fullWidth id="nomeanimal" label="Nome" name="nome" />
                     </Grid>
                     <Grid item xs={12} sm={7}>
                       <FormControl fullWidth>
@@ -156,13 +139,10 @@ export default function UsuariosCadastrar() {
                         </Select>
                       </FormControl>
                     </Grid>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12} sm={4}>
                       <TextField fullWidth id="raca" label="Raça" name="raça" />
                     </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <TextField fullWidth id="pelagem" label="Pelagem" name="pelagem" />
-                    </Grid>
-                    <Grid item xs={12} sm={2}>
+                    <Grid item xs={12} sm={3}>
                     <FormControl fullWidth>
                         <InputLabel id="demo-simple-select-label">Sexo</InputLabel>
                         <Select
@@ -177,11 +157,23 @@ export default function UsuariosCadastrar() {
                         </Select>
                       </FormControl>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} sm={2}>
                       <TextField fullWidth id="idade" label="Idade" name="idade" />
                     </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <TextField fullWidth id="peso" label="Peso" name="peso" />
+                    <Grid item xs={12} sm={3}>
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Castração</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={castracao}
+                          label="Castração"
+                          onChange={handleCastracaoChange}
+                        >
+                          <MenuItem value={10}>Sim</MenuItem>
+                          <MenuItem value={20}>Não</MenuItem>
+                        </Select>
+                      </FormControl>
                     </Grid>
                   </Grid>
                   <Grid container justifyContent="center">
@@ -197,12 +189,6 @@ export default function UsuariosCadastrar() {
                       </Button>
                     </Link>
                   </Grid>
-                  {showAlert && ( // Renderize o Alert apenas quando showAlert for true
-                    <Alert severity="success">
-                      <AlertTitle>Sucesso</AlertTitle>
-                      Seu formulário foi enviado com sucesso!
-                    </Alert>
-                  )}
                 </Paper>
               </Grid>
             </Grid>
