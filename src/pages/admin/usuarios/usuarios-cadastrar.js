@@ -21,26 +21,80 @@ import Footer from '../../../components/footer-admin';
 const defaultTheme = createTheme();
 
 export default function UsuariosCadastrar() {
+  const [nome, setNome] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [rg, setRg] = useState('');
+  const [endereco, setEndereco] = useState('');
   const [cidade, setCidade] = useState('');
+  const [celular1, setCelular1] = useState('');
+  const [celular2, setCelular2] = useState('');
+
+
+  const [nomeanimal, setNomeAnimal] = useState('');
   const [especie, setEspecie] = useState('');
+  const [raca, setRaca] = useState('');
   const [sexo, setSexo] = useState('');
+  const [idade, setIdade] = useState('');
   const [castracao, setCastracao] = useState('');
+
+  const handleNomeChange = (event) => {
+    setNome(event.target.value);
+  };
+
+  const handleCpfChange = (event) => {
+    setCpf(event.target.value);
+  };
+
+  const handleRgChange = (event) => {
+    setRg(event.target.value);
+  };
+
+  const handleEnderecoChange = (event) => {
+    setEndereco(event.target.value);
+  };
 
   const handleCidadeChange = (event) => {
     setCidade(event.target.value);
+  };
+
+  const handleCelular1Change = (event) => {
+    setCidade(event.target.value);
+  };
+
+  const handleCelular2Change = (event) => {
+    setCidade(event.target.value);
+  };
+
+
+
+  const handleNomeAnimalChange = (event) => {
+    setNomeAnimal(event.target.value);
   };
 
   const handleEspecieChange = (event) => {
     setEspecie(event.target.value);
   };
 
+  const handleRacaChange = (event) => {
+    setRaca(event.target.value);
+  };
+
   const handleSexoChange = (event) => {
     setSexo(event.target.value);
+  };
+
+  const handleIdadeChange = (event) => {
+    setIdade(event.target.value);
   };
 
   const handleCastracaoChange = (event) => {
     setCastracao(event.target.value);
   };
+
+
+  function handleSubmit() {
+    const data = {nome, cpf, rg, endereco, cidade, celular1, celular2, nomeanimal, especie, raca, sexo, idade, castracao}
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -63,37 +117,30 @@ export default function UsuariosCadastrar() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              <Grid item xs={12} sm={10}>
+              <Grid item xs={12} sm={12}>
                 <Paper
                   sx={{
                     p: 8,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 870,
-                  }}
-                >
+                    height: 900,
+                  }}>
                   <h1 style={{ textAlign: 'center', color: '#87CEEB', marginBottom: '20px' }}>
                     FORMULÁRIO DE CADASTRO
                   </h1>
                   <h3 style={{ color: '#87CEEB', marginBottom: '10px' }}>DADOS DO RESPONSÁVEL</h3>
                   <Grid container spacing={3}>
                     <Grid item xs={12} sm={12}>
-                      <TextField
-                        margin="normal"
-                        fullWidth
-                        id="nome"
-                        label="Nome"
-                        name="nome"
-                      />
+                      <TextField margin="normal" fullWidth id="nome" label="Nome Completo" name="nome" value={nome} onChange={handleNomeChange}/>
                     </Grid>
                     <Grid item xs={12} sm={7}>
-                      <TextField fullWidth id="cpf" label="CPF" name="cpf" />
+                      <TextField fullWidth id="cpf" label="CPF" name="cpf" value={cpf} onChange={handleCpfChange}/>
                     </Grid>
                     <Grid item xs={12} sm={5}>
-                      <TextField fullWidth id="rg" label="RG" name="rg" />
+                      <TextField fullWidth id="rg" label="RG" name="rg" value={rg} onChange={handleRgChange}/>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth id="endereco" label="Endereço" name="endereco" />
+                      <TextField fullWidth id="endereco" label="Endereço" name="endereco" value={endereco} onChange={handleEnderecoChange}/>
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <FormControl fullWidth>
@@ -108,21 +155,24 @@ export default function UsuariosCadastrar() {
                           <MenuItem value={10}>Lençóis Paulista</MenuItem>
                           <MenuItem value={20}>Macatuba</MenuItem>
                           <MenuItem value={30}>Agudos</MenuItem>
+                          <MenuItem value={40}>Bauru</MenuItem>
+                          <MenuItem value={40}>Águas Claras</MenuItem>
+                          <MenuItem value={40}>Itatiba</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth id="celular1" label="Número de Telefone Principal" name="celular1" />
+                      <TextField fullWidth id="celular1" label="Número de Telefone Principal" name="celular1" value={celular1} onChange={handleCelular1Change}/>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth id="celular2" label="Número de Telefone Reserva" name="celular2" />
+                      <TextField fullWidth id="celular2" label="Número de Telefone Reserva" name="celular2" value={celular2} onChange={handleCelular2Change} />
                     </Grid>
                   </Grid>
                   <h3 style={{ color: 'white' }}></h3>
                   <h3 style={{ color: '#87CEEB' }}>DADOS DO ANIMAL</h3>
                   <Grid container spacing={3}>
                   <Grid item xs={12} sm={5}>
-                      <TextField fullWidth id="nomeanimal" label="Nome" name="nome" />
+                      <TextField fullWidth id="nomeanimal" label="Nome" name="nome" value={nomeanimal} onChange={handleNomeAnimalChange} />
                     </Grid>
                     <Grid item xs={12} sm={7}>
                       <FormControl fullWidth>
@@ -136,11 +186,25 @@ export default function UsuariosCadastrar() {
                         >
                           <MenuItem value={10}>Cachorro</MenuItem>
                           <MenuItem value={20}>Gato</MenuItem>
+                          <MenuItem value={30}>Papagaio</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
                     <Grid item xs={12} sm={4}>
-                      <TextField fullWidth id="raca" label="Raça" name="raça" />
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Raça</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={raca}
+                          label="Raça"
+                          onChange={handleRacaChange}
+                        >
+                          <MenuItem value={10}>Border Collie</MenuItem>
+                          <MenuItem value={20}>Pinscher</MenuItem>
+                          <MenuItem value={30}>Shitzu</MenuItem>
+                        </Select>
+                      </FormControl>
                     </Grid>
                     <Grid item xs={12} sm={3}>
                     <FormControl fullWidth>
@@ -158,7 +222,29 @@ export default function UsuariosCadastrar() {
                       </FormControl>
                     </Grid>
                     <Grid item xs={12} sm={2}>
-                      <TextField fullWidth id="idade" label="Idade" name="idade" />
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Idade</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={idade}
+                          label="Idade"
+                          onChange={handleIdadeChange}
+                        >
+                          <MenuItem value={1}>1 ano</MenuItem>
+                          <MenuItem value={2}>2 anos</MenuItem>
+                          <MenuItem value={3}>3 anos</MenuItem>
+                          <MenuItem value={4}>4 anos</MenuItem>
+                          <MenuItem value={5}>5 anos</MenuItem>
+                          <MenuItem value={6}>6 anos</MenuItem>
+                          <MenuItem value={7}>7 anos</MenuItem>
+                          <MenuItem value={8}>8 anos</MenuItem>
+                          <MenuItem value={9}>9 anos</MenuItem>
+                          <MenuItem value={10}>10 anos</MenuItem>
+                          <MenuItem value={11}>11 anos</MenuItem>
+                          <MenuItem value={12}>12 anos</MenuItem>
+                        </Select>
+                      </FormControl>
                     </Grid>
                     <Grid item xs={12} sm={3}>
                     <FormControl fullWidth>
@@ -176,7 +262,8 @@ export default function UsuariosCadastrar() {
                       </FormControl>
                     </Grid>
                   </Grid>
-                  <Grid container justifyContent="center">
+                  <h3></h3>
+                  <Grid item x2={12} sm={12}>
                     <Link to="/dashboard" style={{ textDecoration: 'none' }}>
                       <Button
                         type="submit"
@@ -195,7 +282,6 @@ export default function UsuariosCadastrar() {
           </Container>
         </Box>
       </Box>
-      <Footer sx={{ pt: 4 }} />
     </ThemeProvider>
   );
 }
