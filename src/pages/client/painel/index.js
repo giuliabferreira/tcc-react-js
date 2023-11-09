@@ -94,7 +94,7 @@ export default function Painel() {
                 autoComplete="current-password"
                 style={{ borderColor: '#87CEEB' }}
               />
-              <Link to="/dashboard" style={{ textDecoration: 'none' }}>
+              <Link to="/inicio" style={{ textDecoration: 'none' }}>
                 <Button
                 type="submit"
                 fullWidth

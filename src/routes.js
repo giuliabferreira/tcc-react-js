@@ -25,7 +25,7 @@ function MainRoutes() {
       <Routes>
         <Route path="/" element={<Painel />}/>
 
-        <Route path="/dashboard" element={<Dashboard />}/>
+        <Route path="/inicio" element={<Usuarios />}/>
 
         <Route path="/agenda" element={<Produtos />}/>
 

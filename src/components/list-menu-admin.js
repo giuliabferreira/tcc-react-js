@@ -30,12 +30,12 @@ export default function AlertDialog() {
 export const mainListItems = (
   
   <React.Fragment>
-    <Link to='/dashboard' style={{ textDecoration: 'none '}}>
+    <Link to='/inicio' style={{ textDecoration: 'none '}}>
     <ListItemButton>
       <ListItemIcon>
         <HomeIcon />
       </ListItemIcon>
-      <ListItemText primary="Página Inicial" style={{ color: 'black' }}/>
+      <ListItemText primary="Listagem" style={{ color: 'black' }}/>
     </ListItemButton>
     </Link>
     <Link to='/agenda' style={{ textDecoration: 'none '}}>

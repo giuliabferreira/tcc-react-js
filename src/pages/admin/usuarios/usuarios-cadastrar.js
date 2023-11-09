@@ -264,7 +264,7 @@ export default function UsuariosCadastrar() {
                   </Grid>
                   <h3></h3>
                   <Grid item x2={12} sm={12}>
-                    <Link to="/dashboard" style={{ textDecoration: 'none' }}>
+                    <Link to="/inicio" style={{ textDecoration: 'none' }}>
                       <Button
                         type="submit"
                         fullWidth
