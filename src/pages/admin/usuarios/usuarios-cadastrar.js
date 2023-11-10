@@ -243,6 +243,13 @@ export default function UsuariosCadastrar() {
                           <MenuItem value={10}>10 anos</MenuItem>
                           <MenuItem value={11}>11 anos</MenuItem>
                           <MenuItem value={12}>12 anos</MenuItem>
+                          <MenuItem value={13}>13 anos</MenuItem>
+                          <MenuItem value={14}>14 anos</MenuItem>
+                          <MenuItem value={15}>15 anos</MenuItem>
+                          <MenuItem value={16}>16 anos</MenuItem>
+                          <MenuItem value={17}>17 anos</MenuItem>
+                          <MenuItem value={18}>18 anos</MenuItem>
+            
                         </Select>
                       </FormControl>
                     </Grid>

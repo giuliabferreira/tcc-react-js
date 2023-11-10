@@ -5,12 +5,13 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 
 import MenuAdmin from '../../../components/menu-admin';
 
 import Footer from '../../../components/footer-admin';
+
+import EnhancedTable from "../../../components/list-admin";
 
 const defaultTheme = createTheme();
 
@@ -44,11 +45,10 @@ export default function UsuariosListagem() {
                     p: 8,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 900,
+                    height: 700,
                   }}>
-                  <h1 style={{ textAlign: 'center', color: '#87CEEB', marginBottom: '20px' }}>
-                    LISTAGEM DE USUÁRIOS
-                  </h1>
+                  
+                  <EnhancedTable />
                   
                   </Paper>
                 </Grid>
