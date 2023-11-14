@@ -13,7 +13,6 @@ import TableSortLabel from '@mui/material/TableSortLabel';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -31,6 +30,14 @@ function createData(nomeanimal, especie, raca, sexo, nome) {
 }
 
 const rows = [
+  createData('Mel', 'Cachorro', 'Border Collie', 'F', 'Magno Júnior'),
+  createData('Rebeca', 'Cachorro', 'Pinscher', 'F', 'Giulia'),
+  createData('Bitelo', 'Cachorro', 'Husky Siberiano', 'M', 'Magno'),
+  createData('Pepa', 'Cachorro', 'Border Collie', 'F', 'Giulia'),
+  createData('Mel', 'Cachorro', 'Border Collie', 'F', 'Magno Júnior'),
+  createData('Rebeca', 'Cachorro', 'Pinscher', 'F', 'Giulia'),
+  createData('Bitelo', 'Cachorro', 'Husky Siberiano', 'M', 'Magno'),
+  createData('Pepa', 'Cachorro', 'Border Collie', 'F', 'Giulia'),
   createData('Mel', 'Cachorro', 'Border Collie', 'F', 'Magno Júnior'),
   createData('Rebeca', 'Cachorro', 'Pinscher', 'F', 'Giulia'),
   createData('Bitelo', 'Cachorro', 'Husky Siberiano', 'M', 'Magno'),
@@ -112,8 +119,6 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="checkbox">
-        </TableCell>
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
@@ -170,7 +175,7 @@ function EnhancedTableToolbar(props) {
           variant="subtitle1"
           component="div"
         >
-          {numSelected} selected
+          {numSelected} Selecionado
         </Typography>
       ) : (
         <Typography
@@ -274,9 +279,9 @@ export default function EnhancedTable() {
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
-        <TableContainer>
+        <TableContainer style={{ maxHeight: 580 }}>
           <Table
-            sx={{ minWidth: 750 }}
+            sx={{ minWidth: 580 }}
             aria-labelledby="tableTitle"
             size={dense ? 'small' : 'medium'}
           >
@@ -339,6 +344,7 @@ export default function EnhancedTable() {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          labelRowsPerPage="Quantidade de Nomes"
         />
       </Paper>
     </Box>
