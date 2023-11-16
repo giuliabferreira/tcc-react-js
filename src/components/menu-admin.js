@@ -40,7 +40,7 @@ export default function MenuAdmin() {
       }),
     }),
     /* Adicione a cor de fundo desejada aqui */
-    backgroundColor: '#87CEEB',
+    backgroundColor: '#19e5e6',
   }));
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(

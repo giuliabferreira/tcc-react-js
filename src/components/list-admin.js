@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
+import Button from '@mui/material/Button';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
@@ -15,6 +16,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
@@ -103,6 +105,12 @@ const headCells = [
     disablePadding: false,
     label: 'Nome do Responsável',
   },
+  {
+    id: 'opcoes',
+    numeric: false,
+    disablePadding: false,
+    label: 'Opções',
+  },
 ];
 
 function EnhancedTableHead(props) {
@@ -184,19 +192,6 @@ function EnhancedTableToolbar(props) {
         </Typography>
       )}
 
-      {numSelected > 0 ? (
-        <Tooltip title="Deletar">
-          <IconButton>
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>
-      ) : (
-        <Tooltip title="Filtros">
-          <IconButton>
-            <FilterListIcon />
-          </IconButton>
-        </Tooltip>
-      )}
     </Toolbar>
   );
 }
@@ -317,6 +312,10 @@ export default function EnhancedTable() {
                     <TableCell align="left">{row.raca}</TableCell>
                     <TableCell align="left">{row.sexo}</TableCell>
                     <TableCell align="left">{row.nome}</TableCell>
+                  <TableCell align="center"><ButtonGroup variant="outlined" aria-label="outlined button group">
+                    <Button>Atualizar</Button>
+                    <Button>Excluir</Button>
+                  </ButtonGroup></TableCell>
                   </TableRow>
                 );
               })}
