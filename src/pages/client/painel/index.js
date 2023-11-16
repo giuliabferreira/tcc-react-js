@@ -100,7 +100,7 @@ export default function Painel() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                style={{ backgroundColor: '#19e5e6', border: '2px solid	#19e5e6' }} // Use 'style' em vez de 'sx' para estilizar o botão
+                style={{ backgroundColor: '#5CE1E6', border: '2px solid	#5CE1E6' }} // Use 'style' em vez de 'sx' para estilizar o botão
                 sx={{ mt: 3, mb: 2 }}
                 >
                 Entrar

@@ -8,17 +8,13 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import TableSortLabel from '@mui/material/TableSortLabel';
 import Toolbar from '@mui/material/Toolbar';
+import TablePagination from '@mui/material/TablePagination';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 
 function createData(nomeanimal, especie, raca, sexo, nome) {
@@ -126,7 +122,7 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
+            align={headCell.numeric ? 'center' : 'center'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -267,7 +263,6 @@ export default function EnhancedTable() {
   );
 
   return (
-    <Box sx={{ width: '600' }}>
       <Paper sx={{ width: '600', mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer style={{ maxHeight: 600 }}>
@@ -288,7 +283,7 @@ export default function EnhancedTable() {
               {visibleRows.map((row, index) => {
                 const isItemSelected = isSelected(row.nomeanimal);
                 const labelId = `enhanced-table-checkbox-${index}`;
-
+  
                 return (
                   <TableRow
                     hover
@@ -299,23 +294,24 @@ export default function EnhancedTable() {
                     selected={isItemSelected}
                     sx={{ cursor: 'pointer' }}
                   >
-                    
                     <TableCell
                       component="th"
                       id={labelId}
                       scope="row"
-                      align="left"
+                      align="center"
                     >
                       {row.nomeanimal}
                     </TableCell>
-                    <TableCell align="left">{row.especie}</TableCell>
-                    <TableCell align="left">{row.raca}</TableCell>
-                    <TableCell align="left">{row.sexo}</TableCell>
-                    <TableCell align="left">{row.nome}</TableCell>
-                  <TableCell align="center"><ButtonGroup variant="outlined" aria-label="outlined button group">
-                    <Button>Atualizar</Button>
-                    <Button>Excluir</Button>
-                  </ButtonGroup></TableCell>
+                    <TableCell align="center">{row.especie}</TableCell>
+                    <TableCell align="center">{row.raca}</TableCell>
+                    <TableCell align="center">{row.sexo}</TableCell>
+                    <TableCell align="center">{row.nome}</TableCell>
+                    <TableCell align="center">
+                      <ButtonGroup variant="outlined" aria-label="outlined button group">
+                        <Button style={{ borderColor: 'black', color: 'black', fontSize: '0.8rem', padding: '7px 10px' }}>Atualizar</Button>
+                        <Button style={{ borderColor: 'black', color: 'black', fontSize: '0.8rem', padding: '7px 10px' }}>Excluir</Button>
+                      </ButtonGroup>
+                    </TableCell>
                   </TableRow>
                 );
               })}
@@ -330,13 +326,12 @@ export default function EnhancedTable() {
               )}
             </TableBody>
           </Table>
+          <TablePagination
+        component="div"
+        page={page}
+        onPageChange={handleChangePage}
+        rowsPerPageOptions={[]}
+      />
         </TableContainer>
-        <TablePagination
-          component="div"
-          page={page}
-          onPageChange={handleChangePage}
-        />
       </Paper>
-    </Box>
-  );
-}
+  )};
