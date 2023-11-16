@@ -12,6 +12,8 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 
+import logotipo from '../../../img/logotipo.png';
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -65,7 +67,7 @@ export default function Painel() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: '#87CEEB' }}>
+            <Avatar sx={{ m: 1 }}>
               <LocalHospitalIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -99,7 +101,7 @@ export default function Painel() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                style={{ backgroundColor: '#87CEEB', border: '2px solid #87CEEB' }} // Use 'style' em vez de 'sx' para estilizar o botão
+                style={{ backgroundColor: '#C0C0C0', border: '2px solid	#C0C0C0' }} // Use 'style' em vez de 'sx' para estilizar o botão
                 sx={{ mt: 3, mb: 2 }}
                 >
                 Entrar

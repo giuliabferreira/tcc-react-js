@@ -30,18 +30,14 @@ function createData(nomeanimal, especie, raca, sexo, nome) {
 }
 
 const rows = [
-  createData('Mel', 'Cachorro', 'Border Collie', 'F', 'Magno Júnior'),
-  createData('Rebeca', 'Cachorro', 'Pinscher', 'F', 'Giulia'),
-  createData('Bitelo', 'Cachorro', 'Husky Siberiano', 'M', 'Magno'),
-  createData('Pepa', 'Cachorro', 'Border Collie', 'F', 'Giulia'),
-  createData('Mel', 'Cachorro', 'Border Collie', 'F', 'Magno Júnior'),
-  createData('Rebeca', 'Cachorro', 'Pinscher', 'F', 'Giulia'),
-  createData('Bitelo', 'Cachorro', 'Husky Siberiano', 'M', 'Magno'),
-  createData('Pepa', 'Cachorro', 'Border Collie', 'F', 'Giulia'),
-  createData('Mel', 'Cachorro', 'Border Collie', 'F', 'Magno Júnior'),
-  createData('Rebeca', 'Cachorro', 'Pinscher', 'F', 'Giulia'),
-  createData('Bitelo', 'Cachorro', 'Husky Siberiano', 'M', 'Magno'),
-  createData('Pepa', 'Cachorro', 'Border Collie', 'F', 'Giulia'),
+  createData('Mel', 'Cachorro', 'Border Collie', 'F', 'Magno Nunes Ferreira'),
+  createData('Rebeca', 'Cachorro', 'Pinscher', 'F', 'Giulia Bodo Ferreira'),
+  createData('Bitelo', 'Cachorro', 'Husky Siberiano', 'M', 'Magno Nunes Ferreira'),
+  createData('Pepa', 'Cachorro', 'Border Collie', 'F', 'Giulia Bodo Ferreira'),
+  createData('Rosa', 'Cachorro', 'Dachschund', 'F', 'Isabela Soares da Costa'),
+  createData('Elias', 'Gato', 'Siamês', 'M', 'Renato Fernando Lopes'),
+  createData('Helena', 'Gato', 'Persa', 'F', 'Rosângela Feliposa de Andrade'),
+  createData('Tyrone', 'Gato', 'Ragdoll', 'M', 'Rafael Rodrigues da Silva'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -180,7 +176,7 @@ function EnhancedTableToolbar(props) {
       ) : (
         <Typography
           sx={{ flex: '1 1 100%' }}
-          variant="h6"
+          variant="h5"
           id="tableTitle"
           component="div"
         >
@@ -210,8 +206,8 @@ EnhancedTableToolbar.propTypes = {
 };
 
 export default function EnhancedTable() {
-  const [order, setOrder] = React.useState('asc');
-  const [orderBy, setOrderBy] = React.useState('calories');
+  const [order, setOrder] = React.useState();
+  const [orderBy, setOrderBy] = React.useState();
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -260,7 +256,7 @@ export default function EnhancedTable() {
     setPage(0);
   };
 
-  const isSelected = (nomeanimal) => selected.indexOf(nomeanimal) !== -1;
+  const isSelected = (nomeanimal, especie, raca, sexo, nome) => selected.indexOf(nomeanimal, especie, raca, sexo, nome) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -276,12 +272,12 @@ export default function EnhancedTable() {
   );
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Paper sx={{ width: '100%', mb: 2 }}>
+    <Box sx={{ width: '600' }}>
+      <Paper sx={{ width: '600', mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
-        <TableContainer style={{ maxHeight: 580 }}>
+        <TableContainer style={{ maxHeight: 600 }}>
           <Table
-            sx={{ minWidth: 580 }}
+            sx={{ minWidth: 600 }}
             aria-labelledby="tableTitle"
             size={dense ? 'small' : 'medium'}
           >
@@ -313,21 +309,21 @@ export default function EnhancedTable() {
                       component="th"
                       id={labelId}
                       scope="row"
-                      padding="none"
+                      align="left"
                     >
                       {row.nomeanimal}
                     </TableCell>
-                    <TableCell align="right">{row.especie}</TableCell>
-                    <TableCell align="right">{row.raca}</TableCell>
-                    <TableCell align="right">{row.sexo}</TableCell>
-                    <TableCell align="right">{row.nome}</TableCell>
+                    <TableCell align="left">{row.especie}</TableCell>
+                    <TableCell align="left">{row.raca}</TableCell>
+                    <TableCell align="left">{row.sexo}</TableCell>
+                    <TableCell align="left">{row.nome}</TableCell>
                   </TableRow>
                 );
               })}
               {emptyRows > 0 && (
                 <TableRow
                   style={{
-                    height: (dense ? 33 : 53) * emptyRows,
+                    height: (dense ? 53 : 53) * emptyRows,
                   }}
                 >
                   <TableCell colSpan={6} />
@@ -337,14 +333,9 @@ export default function EnhancedTable() {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-          labelRowsPerPage="Quantidade de Nomes"
         />
       </Paper>
     </Box>
