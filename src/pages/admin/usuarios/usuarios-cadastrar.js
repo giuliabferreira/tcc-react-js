@@ -152,12 +152,12 @@ export default function UsuariosCadastrar() {
                           label="Cidade"
                           onChange={handleCidadeChange}
                         >
-                          <MenuItem value={10}>Lençóis Paulista</MenuItem>
-                          <MenuItem value={20}>Macatuba</MenuItem>
-                          <MenuItem value={30}>Agudos</MenuItem>
-                          <MenuItem value={40}>Bauru</MenuItem>
-                          <MenuItem value={40}>Águas Claras</MenuItem>
-                          <MenuItem value={40}>Itatiba</MenuItem>
+                          <MenuItem value={1}>Lençóis Paulista</MenuItem>
+                          <MenuItem value={2}>Macatuba</MenuItem>
+                          <MenuItem value={3}>Agudos</MenuItem>
+                          <MenuItem value={4}>Bauru</MenuItem>
+                          <MenuItem value={5}>Águas Claras</MenuItem>
+                          <MenuItem value={6}>Itatiba</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
@@ -184,9 +184,9 @@ export default function UsuariosCadastrar() {
                           label="Espécie"
                           onChange={handleEspecieChange}
                         >
-                          <MenuItem value={10}>Cachorro</MenuItem>
-                          <MenuItem value={20}>Gato</MenuItem>
-                          <MenuItem value={30}>Papagaio</MenuItem>
+                          <MenuItem value={1}>Cachorro</MenuItem>
+                          <MenuItem value={2}>Gato</MenuItem>
+                          <MenuItem value={3}>Papagaio</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
@@ -200,9 +200,9 @@ export default function UsuariosCadastrar() {
                           label="Raça"
                           onChange={handleRacaChange}
                         >
-                          <MenuItem value={10}>Border Collie</MenuItem>
-                          <MenuItem value={20}>Pinscher</MenuItem>
-                          <MenuItem value={30}>Shitzu</MenuItem>
+                          <MenuItem value={1}>Border Collie</MenuItem>
+                          <MenuItem value={2}>Pinscher</MenuItem>
+                          <MenuItem value={3}>Shitzu</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
@@ -216,8 +216,8 @@ export default function UsuariosCadastrar() {
                           label="Sexo"
                           onChange={handleSexoChange}
                         >
-                          <MenuItem value={10}>Feminino</MenuItem>
-                          <MenuItem value={20}>Masculino</MenuItem>
+                          <MenuItem value={1}>Feminino</MenuItem>
+                          <MenuItem value={2}>Masculino</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
@@ -264,8 +264,8 @@ export default function UsuariosCadastrar() {
                           label="Castração"
                           onChange={handleCastracaoChange}
                         >
-                          <MenuItem value={10}>Sim</MenuItem>
-                          <MenuItem value={20}>Não</MenuItem>
+                          <MenuItem value={1}>Sim</MenuItem>
+                          <MenuItem value={2}>Não</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
