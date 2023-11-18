@@ -249,7 +249,8 @@ export default function UsuariosCadastrar() {
                           <MenuItem value={16}>16 anos</MenuItem>
                           <MenuItem value={17}>17 anos</MenuItem>
                           <MenuItem value={18}>18 anos</MenuItem>
-            
+                          <MenuItem value={19}>19 anos</MenuItem>
+                          <MenuItem value={20}>20 anos</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
@@ -276,7 +277,7 @@ export default function UsuariosCadastrar() {
                         type="submit"
                         fullWidth
                         variant="contained"
-                        style={{ backgroundColor: '#87CEEB', border: '2px solid #87CEEB', textAlign: 'center' }}
+                        style={{ backgroundColor: '#5CE1E6', border: '2px solid #5CE1E6', textAlign: 'center' }}
                         sx={{ mt: 3, mb: 2 }}
                       >
                         Enviar
