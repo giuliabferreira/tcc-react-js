@@ -120,27 +120,28 @@ export default function UsuariosCadastrar() {
               <Grid item xs={12} sm={12}>
                 <Paper
                   sx={{
-                    p: 8,
-                    display: 'flex',
+                    p: 6,
+                    display: 'static',
                     flexDirection: 'column',
-                    height: 900,
+                    height: 820,
                   }}>
-                  <h1 style={{ textAlign: 'center', color: '#87CEEB', marginBottom: '20px' }}>
+
+                  <h1 style={{ textAlign: 'center', color: '#5CE1E6', marginBottom: '20px' }}>
                     FORMULÁRIO DE CADASTRO
                   </h1>
-                  <h3 style={{ color: '#87CEEB', marginBottom: '10px' }}>DADOS DO RESPONSÁVEL</h3>
+                  <h3 style={{ color: '#5CE1E6', marginBottom: '10px' }}>DADOS DO RESPONSÁVEL</h3>
                   <Grid container spacing={3}>
                     <Grid item xs={12} sm={12}>
-                      <TextField margin="normal" fullWidth id="nome" label="Nome Completo" name="nome" value={nome} onChange={handleNomeChange}/>
+                      <TextField margin="normal" fullWidth id="nome" label="Nome Completo" name="nome" required value={nome} onChange={handleNomeChange}/>
                     </Grid>
                     <Grid item xs={12} sm={7}>
-                      <TextField fullWidth id="cpf" label="CPF" name="cpf" value={cpf} onChange={handleCpfChange}/>
+                      <TextField fullWidth id="cpf" label="CPF" name="cpf" required value={cpf} onChange={handleCpfChange}/>
                     </Grid>
                     <Grid item xs={12} sm={5}>
-                      <TextField fullWidth id="rg" label="RG" name="rg" value={rg} onChange={handleRgChange}/>
+                      <TextField fullWidth id="rg" label="RG" name="rg" required value={rg} onChange={handleRgChange}/>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth id="endereco" label="Endereço" name="endereco" value={endereco} onChange={handleEnderecoChange}/>
+                      <TextField fullWidth id="endereco" label="Endereço" required name="endereco" value={endereco} onChange={handleEnderecoChange}/>
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <FormControl fullWidth>
@@ -149,6 +150,7 @@ export default function UsuariosCadastrar() {
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
                           value={cidade}
+                          required
                           label="Cidade"
                           onChange={handleCidadeChange}
                         >
@@ -162,17 +164,17 @@ export default function UsuariosCadastrar() {
                       </FormControl>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth id="celular1" label="Número de Telefone Principal" name="celular1" value={celular1} onChange={handleCelular1Change}/>
+                      <TextField fullWidth id="celular1" label="Número de Telefone Principal" name="celular1" required value={celular1} onChange={handleCelular1Change}/>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth id="celular2" label="Número de Telefone Reserva" name="celular2" value={celular2} onChange={handleCelular2Change} />
+                      <TextField fullWidth id="celular2" label="Número de Telefone Reserva" name="celular2" required value={celular2} onChange={handleCelular2Change} />
                     </Grid>
                   </Grid>
                   <h3 style={{ color: 'white' }}></h3>
-                  <h3 style={{ color: '#87CEEB' }}>DADOS DO ANIMAL</h3>
+                  <h3 style={{ color: '#5CE1E6' }}>DADOS DO ANIMAL</h3>
                   <Grid container spacing={3}>
                   <Grid item xs={12} sm={5}>
-                      <TextField fullWidth id="nomeanimal" label="Nome" name="nome" value={nomeanimal} onChange={handleNomeAnimalChange} />
+                      <TextField fullWidth id="nomeanimal" label="Nome" name="nome" required value={nomeanimal} onChange={handleNomeAnimalChange} />
                     </Grid>
                     <Grid item xs={12} sm={7}>
                       <FormControl fullWidth>
@@ -181,6 +183,7 @@ export default function UsuariosCadastrar() {
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
                           value={especie}
+                          required
                           label="Espécie"
                           onChange={handleEspecieChange}
                         >
@@ -196,6 +199,7 @@ export default function UsuariosCadastrar() {
                         <Select
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
+                          required
                           value={raca}
                           label="Raça"
                           onChange={handleRacaChange}
@@ -203,6 +207,7 @@ export default function UsuariosCadastrar() {
                           <MenuItem value={1}>Border Collie</MenuItem>
                           <MenuItem value={2}>Pinscher</MenuItem>
                           <MenuItem value={3}>Shitzu</MenuItem>
+                          <MenuItem value={4}>Vira-Lata</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
@@ -213,6 +218,7 @@ export default function UsuariosCadastrar() {
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
                           value={sexo}
+                          required
                           label="Sexo"
                           onChange={handleSexoChange}
                         >
@@ -261,6 +267,7 @@ export default function UsuariosCadastrar() {
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
                           value={castracao}
+                          required
                           label="Castração"
                           onChange={handleCastracaoChange}
                         >
@@ -280,7 +287,7 @@ export default function UsuariosCadastrar() {
                         style={{ backgroundColor: '#5CE1E6', border: '2px solid #5CE1E6', textAlign: 'center' }}
                         sx={{ mt: 3, mb: 2 }}
                       >
-                        Enviar
+                        Salvar
                       </Button>
                     </Link>
                   </Grid>

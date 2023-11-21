@@ -65,7 +65,7 @@ export default function Painel() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1 }}>
+            <Avatar sx={{ m: 1, bgcolor: '#5CE1E6' }}>
               <LocalHospitalIcon />
             </Avatar>
 
