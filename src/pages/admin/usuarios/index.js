@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
@@ -14,6 +14,13 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import { styled, alpha } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import InputBase from '@mui/material/InputBase';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
 
 import MenuAdmin from '../../../components/menu-admin';
 
@@ -26,15 +33,11 @@ function createData(id, nomeanimal, especie, raca, sexo, nome) {
 }
 
 const rows = [
-  createData(1, 'Mel', 'Cachorro', 'Border Collie', 'F', 'Magno Nunes Ferreira'),
-  createData(2, 'Rebeca', 'Cachorro', 'Pinscher', 'F', 'Giulia Bodo Ferreira'),
-  createData(3, 'Bitelo', 'Cachorro', 'Husky Siberiano', 'M', 'Magno Nunes Ferreira'),
-  createData(4, 'Pepa', 'Cachorro', 'Border Collie', 'F', 'Giulia Bodo Ferreira'),
-  createData(5, 'Rosa', 'Cachorro', 'Dachschund', 'F', 'Isabela Soares da Costa'),
-  createData(6, 'Elias', 'Gato', 'Siamês', 'M', 'Renato Fernando Lopes'),
-  createData(7, 'Helena', 'Gato', 'Persa', 'F', 'Rosângela Feliposa de Andrade'),
-  createData(8, 'Tyrone', 'Gato', 'Ragdoll', 'M', 'Rafael Rodrigues da Silva'),
-  createData(9, 'Harry', 'Gato', 'Vira-Lata', 'M', 'Fernando Torres'),
+  createData(1, 'Nina', 'Cachorro', 'Dachschund', 'F', 'Isabela Soares da Costa'),
+  createData(2, 'Elias', 'Gato', 'Siamês', 'M', 'José Renato Lopes'),
+  createData(3, 'Helena', 'Gato', 'Persa', 'F', 'Rosângela Machado de Andrade'),
+  createData(4, 'Duda', 'Gato', 'Ragdoll', 'F', 'Alice Bianchini da Silva'),
+  createData(5, 'Bitelo', 'Cachorro', 'Vira-Lata', 'M', 'João Manuel Gomes'),
 ];
 
 export default function UsuariosListagem() {
@@ -67,7 +70,7 @@ export default function UsuariosListagem() {
                   p: 1,
                   display: 'flex',
                   flexDirection: 'column',
-                  height: '770px',
+                  height: '750px',
                   width: '1200px',
                 }}>
                 <h2 style={{ color: '#5CE1E6', textAlign: 'center' }}>

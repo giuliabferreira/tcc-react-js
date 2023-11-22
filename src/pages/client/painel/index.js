@@ -82,7 +82,6 @@ export default function Painel() {
                 name="email"
                 autoComplete="email"
                 autoFocus
-                style={{ borderColor: '#87CEEB' }}
               />
               <TextField
                 margin="normal"
@@ -93,7 +92,6 @@ export default function Painel() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                style={{ borderColor: '#87CEEB' }}
               />
               <Link to="/inicio" style={{ textDecoration: 'none' }}>
                 <Button

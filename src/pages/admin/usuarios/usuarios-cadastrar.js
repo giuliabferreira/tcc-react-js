@@ -16,7 +16,6 @@ import { FormControl } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import MenuAdmin from '../../../components/menu-admin';
-import Footer from '../../../components/footer-admin';
 
 const defaultTheme = createTheme();
 
@@ -123,7 +122,7 @@ export default function UsuariosCadastrar() {
                     p: 6,
                     display: 'static',
                     flexDirection: 'column',
-                    height: 820,
+                    height: 830,
                   }}>
 
                   <h1 style={{ textAlign: 'center', color: '#5CE1E6', marginBottom: '20px' }}>
@@ -170,7 +169,7 @@ export default function UsuariosCadastrar() {
                       <TextField fullWidth id="celular2" label="Número de Telefone Reserva" name="celular2" required value={celular2} onChange={handleCelular2Change} />
                     </Grid>
                   </Grid>
-                  <h3 style={{ color: 'white' }}></h3>
+                  <h1 style={{ color: 'white' }}></h1>
                   <h3 style={{ color: '#5CE1E6' }}>DADOS DO ANIMAL</h3>
                   <Grid container spacing={3}>
                   <Grid item xs={12} sm={5}>
@@ -181,7 +180,7 @@ export default function UsuariosCadastrar() {
                         <InputLabel id="demo-simple-select-label">Espécie</InputLabel>
                         <Select
                           labelId="demo-simple-select-label"
-                          id="demo-simple-select"
+                          id="demo-simple-select-required"
                           value={especie}
                           required
                           label="Espécie"
@@ -189,7 +188,6 @@ export default function UsuariosCadastrar() {
                         >
                           <MenuItem value={1}>Cachorro</MenuItem>
                           <MenuItem value={2}>Gato</MenuItem>
-                          <MenuItem value={3}>Papagaio</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
@@ -198,7 +196,7 @@ export default function UsuariosCadastrar() {
                         <InputLabel id="demo-simple-select-label">Raça</InputLabel>
                         <Select
                           labelId="demo-simple-select-label"
-                          id="demo-simple-select"
+                          id="demo-simple-select-required"
                           required
                           value={raca}
                           label="Raça"
@@ -208,6 +206,10 @@ export default function UsuariosCadastrar() {
                           <MenuItem value={2}>Pinscher</MenuItem>
                           <MenuItem value={3}>Shitzu</MenuItem>
                           <MenuItem value={4}>Vira-Lata</MenuItem>
+                          <MenuItem value={5}>Dachschund</MenuItem>
+                          <MenuItem value={6}>Siamês</MenuItem>
+                          <MenuItem value={7}>Ragdoll</MenuItem>
+                          <MenuItem value={8}>Persa</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
@@ -215,10 +217,9 @@ export default function UsuariosCadastrar() {
                     <FormControl fullWidth>
                         <InputLabel id="demo-simple-select-label">Sexo</InputLabel>
                         <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
+                          labelId="demo-simple-select-required-label"
+                          id="demo-simple-select-required"
                           value={sexo}
-                          required
                           label="Sexo"
                           onChange={handleSexoChange}
                         >
@@ -229,10 +230,10 @@ export default function UsuariosCadastrar() {
                     </Grid>
                     <Grid item xs={12} sm={2}>
                     <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Idade</InputLabel>
+                        <InputLabel id="demo-simple-select-required-label">Idade</InputLabel>
                         <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
+                          labelId="demo-simple-select-required-label"
+                          id="demo-simple-select-required"
                           value={idade}
                           label="Idade"
                           onChange={handleIdadeChange}
@@ -262,10 +263,10 @@ export default function UsuariosCadastrar() {
                     </Grid>
                     <Grid item xs={12} sm={3}>
                     <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Castração</InputLabel>
+                        <InputLabel id="demo-simple-select-required-label">Castração</InputLabel>
                         <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
+                          labelId="demo-simple-select-required-label"
+                          id="demo-simple-select-required"
                           value={castracao}
                           required
                           label="Castração"
