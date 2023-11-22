@@ -11,8 +11,7 @@ import Painel from "../src/pages/client/painel/index";
 //
 
 import Produtos from "./pages/admin/produtos";
-import ProdutosCadastrar from "./pages/admin/produtos/produtos-cadastrar";
-import ProdutosEditar from "./pages/admin/produtos/produtos-editar";
+
 
 import Usuarios from "./pages/admin/usuarios";
 import UsuariosCadastrar from "./pages/admin/usuarios/usuarios-cadastrar";

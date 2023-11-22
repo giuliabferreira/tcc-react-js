@@ -8,6 +8,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+import BloodtypeIcon from '@mui/icons-material/Bloodtype';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
@@ -66,7 +67,7 @@ export default function Painel() {
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: '#5CE1E6' }}>
-              <LocalHospitalIcon />
+              <BloodtypeIcon />
             </Avatar>
 
             <Typography component="h1" variant="h5">
