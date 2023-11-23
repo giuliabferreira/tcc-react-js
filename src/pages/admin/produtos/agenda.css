@@ -62,7 +62,7 @@
 }
 
 .buttons-container button {
-  background-color: #81b8f3;
+  background-color: #e8ecec;
   color: #fff;
   border: none;
   padding: 10px 15px;
@@ -72,7 +72,7 @@
 }
 
 .buttons-container button:hover {
-  background-color: #4b8ed6;
+  background-color: #d9dfdf;
 }
 
 .info-container {
