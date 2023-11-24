@@ -9,14 +9,7 @@ const InfoBar = ({ onInfoChange }) => {
   };
 
   return (
-    <div className="info-bar">
-      <input
-        type="text"
-        placeholder="Escreva algo..."
-        value={inputValue}
-        onChange={handleInputChange}
-      />
-    </div>
+    <div></div>
   );
 };
 

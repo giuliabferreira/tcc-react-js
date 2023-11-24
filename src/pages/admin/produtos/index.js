@@ -70,17 +70,17 @@ export default function Produtos() {
      <Calendar onChange={setDate} value={date} onClickDay={handleDayClick} className="custom-calendar"/>
       {showTime && <InfoBar info={info}/>}
    </div>
-
+   <div>.</div>
    <div className="text-center">
       Selecione uma data: {date.toDateString()}
    </div>
    {date.length > 0 ? (
      <p>
-       <span>começar</span>
+       <span>Começar</span>
        {date[0].toDateString()}
        &nbsp;
        &nbsp;
-       <span>fim</span> {date[1].toDateString()}
+       <span>Fim</span> {date[1].toDateString()}
      </p>
    ) : (
      <p>
