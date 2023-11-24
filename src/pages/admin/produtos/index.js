@@ -70,7 +70,7 @@ export default function Produtos() {
      <Calendar onChange={setDate} value={date} onClickDay={handleDayClick} className="custom-calendar"/>
       {showTime && <InfoBar info={info}/>}
    </div>
-   <div>.</div>
+   <h5 style={{color: 'white'}}>.</h5>
    <div className="text-center">
       Selecione uma data: {date.toDateString()}
    </div>
