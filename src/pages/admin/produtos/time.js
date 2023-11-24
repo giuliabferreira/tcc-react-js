@@ -4,7 +4,7 @@ import Calendar from 'react-calendar';
 import './index.js';
 
 
-const time = ['08:00','08:30','09:00','09:30','10:00','10:30','13:00','13:30','14:00','14:30', '15:00','15:30']
+const time = ['08:00','08:30','09:00','09:30','10:00','10:30','13:00','13:30','14:00','14:30', '15:00']
 function Times(props) {
 
  const [event, setEvent] = useState(null)

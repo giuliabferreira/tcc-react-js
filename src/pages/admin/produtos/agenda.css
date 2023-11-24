@@ -1,14 +1,8 @@
-.info-bar {
-  background-color: #e8ecec; /* Cor de fundo - ajuste conforme necessário */
-  color: #fff; /* Cor do texto - ajuste conforme necessário */
-  padding: 10px;
-  text-align: center;
-}
-
 .header {
   margin: 0; /* Remove a margem padrão do h1 */
-  color: #fff; /* Cor do texto - você pode alterar para a cor desejada */
+  color: white; /* Cor do texto - você pode alterar para a cor desejada */
 }
+
 .page-container {
   display: flex;
   justify-content: center;
@@ -20,33 +14,49 @@
 .produtos {
   text-align: center;
 }
+.react-calendar {
+  font-weight: bold;
+}
 
+.react-calendar__tile {
+  font-weight: bold;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  font-weight: bold;
+}
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #808080; /* Cor para dias de outros meses */
+  font-weight: normal; /* Reset da fonte negrito para dias de outros meses */
+}
 .custom-calendar {
-  margin-top: 10px;
-  background-color: #e8ecec;
-  color: #fff;
+  margin-top: 20px;
+  background-color: white;
+  color: black;
   text-decoration: none;
-  padding: 10px; /* Ajuste conforme necessário para o espaçamento interno desejado */
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px; /* Ajuste conforme necessário para o espaçamento interno desejado */
+  border-radius: 25px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
   width: 600px; /* Ajuste conforme necessário para a largura desejada */
   max-width: 100%; /* Certifica-se de que o calendário não ultrapasse a largura do contêiner */
   height: 400px;
-  position: relative;
+  position: flex;
   transform: translateX(50%); /* Corrige a posição para o centro */
 }
 
 .custom-calendar .react-calendar__navigation {
-  background-color: #4f83b9;
+  background-color: white;
 }
 
 .custom-calendar .react-calendar__navigation__label {
-  color: #fff;
+  color: black;
+  background-color: white;
 }
 
 .custom-calendar .react-calendar__tile--active {
-  background-color: #0056b3;
-  color: rgb(241, 237, 224);
+  background-color: #5CE1E6;
+  color: black;
+  border-radius: 20px;
 }
 
 .times {
@@ -57,25 +67,25 @@
 
 .buttons-container {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   margin-top: 20px;
 }
 
 .buttons-container button {
-  background-color: #e8ecec;
-  color: #fff;
+  background-color: #5CE1E6;
+  color: white;
   border: none;
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .buttons-container button:hover {
-  background-color: #d9dfdf;
+  background-color: #39c0c5;
 }
 
 .info-container {
   margin-top: 10px;
-  color: #333;
+  color: black;
 }
