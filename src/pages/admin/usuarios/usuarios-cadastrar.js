@@ -59,11 +59,11 @@ export default function UsuariosCadastrar() {
   };
 
   const handleCelular1Change = (event) => {
-    setCidade(event.target.value);
+    setCelular1(event.target.value);
   };
 
   const handleCelular2Change = (event) => {
-    setCidade(event.target.value);
+    setCelular2(event.target.value);
   };
 
 
