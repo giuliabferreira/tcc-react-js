@@ -68,7 +68,7 @@ export default function UsuariosListagem() {
                   width: '1200px',
                 }}>
                 <h2 style={{ color: '#5CE1E6', textAlign: 'center' }}>
-                    LISTAGEM DE USUÁRIOS
+                    LISTAGEM DE CLIENTES
                   </h2>
                   <Grid container spacing={3}>
                     <Grid item xs={12} sm={12}>
